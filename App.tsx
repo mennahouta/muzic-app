@@ -1,24 +1,18 @@
 import React from 'react';
-import { Button, StyleSheet, Alert, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './src/screens/HomeScreen';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Button  
-      title='Takbeer'  
-      onPress={ () => Alert.alert("ALLAHO AKBAR", "", [{text: 'Alhamdulellah'}])}> 
-      </Button>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'papayawhip',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;
