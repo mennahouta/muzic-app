@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image } from 'react-native'; 
 import { fetchAlbums } from '../services/itunesService';
 import { Album } from '../types/itunes';
 
