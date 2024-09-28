@@ -2,7 +2,6 @@ import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-// Reusable component for detail rows
 export default function DetailRow({ icon, label, value }: { icon: string; label: string; value: string }) {
     return (
         <View style={styles.detailRow}>

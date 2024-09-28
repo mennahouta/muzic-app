@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import { Pressable, StyleSheet } from 'react-native'
+import { Pressable, PressableProps } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-export default function FavButton() {
-    const [isFavorite, setIsFavorite] = useState<boolean>(false)
-    const handleFavPress = () => {
-        setIsFavorite((prev) => !prev)
-    }
-    return (
-        <Pressable onPress={handleFavPress}>
-            <Icon name={isFavorite ? 'favorite' : 'favorite-outline'} size={30}></Icon>
-        </Pressable>
-    )
+type FavButtonProps = {
+    favIconFilled?: boolean
+    size?: number
+}
+
+export default function FavButton(props: FavButtonProps) {
+    const { favIconFilled, size = 30 } = props
+    return <Icon name={favIconFilled ? 'favorite' : 'favorite-outline'} size={size}></Icon>
 }

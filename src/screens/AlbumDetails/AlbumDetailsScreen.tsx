@@ -1,9 +1,9 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable } from 'react-native'
+import { View, StyleSheet, Image, Linking } from 'react-native'
 import { DetailsScreenProps } from '../../types/navigation'
 import Button from '../../components/Button'
 import DetailRow from './DetailRow'
-import FavButton from '../../components/FavButton'
+import FavActionButton from './FavActionButton'
 
 const DetailsScreen = ({ route }: DetailsScreenProps) => {
     const { album } = route.params
@@ -27,9 +27,7 @@ const DetailsScreen = ({ route }: DetailsScreenProps) => {
             </View>
 
             <View style={styles.actionsContainer}>
-                <View style={styles.favButtonContainer}>
-                    <FavButton></FavButton>
-                </View>
+                <FavActionButton album={album}></FavActionButton>
                 <View style={styles.itunesLinkContainer}>
                     <Button title="iTunes Link" onPress={() => Linking.openURL(album.link)}></Button>
                 </View>
@@ -84,13 +82,6 @@ const styles = StyleSheet.create({
     },
     itunesLinkContainer: {
         width: '80%',
-    },
-    favButtonContainer: {
-        marginLeft: 10,
-        alignItems: 'center',
-        padding: 10,
-        backgroundColor: 'white',
-        borderRadius: 25,
     },
 })
 
