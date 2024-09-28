@@ -8,6 +8,12 @@ type Item = {
     label: string
 }
 
+type Link = {
+    attributes: {
+        href: string
+    }
+}
+
 export type RawAlbum = {
     id: Item
     'im:name': Item
@@ -16,6 +22,7 @@ export type RawAlbum = {
     'im:price': Item
     'im:artist': Item
     'im:releaseDate': ReleaseDate
+    link: Link
 }
 
 export type TopAlbumsResponse = {
@@ -32,4 +39,5 @@ export type Album = {
     price: string
     artist: string
     releaseDate: string
+    link: string
 }

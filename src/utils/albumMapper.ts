@@ -9,5 +9,6 @@ export const transformAlbum = (raw: RawAlbum): Album => {
         price: raw['im:price'].label,
         artist: raw['im:artist'].label,
         releaseDate: raw['im:releaseDate'].attributes.label,
+        link: raw.link.attributes.href,
     }
 }
