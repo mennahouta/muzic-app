@@ -4,7 +4,7 @@ import { Text, StyleSheet, Pressable, ButtonProps } from 'react-native'
 export default function Button(props: ButtonProps) {
     const { onPress, title = 'Save' } = props
     return (
-        <Pressable style={styles.button} onPress={onPress}>
+        <Pressable style={styles.button} onPress={onPress} {...props}>
             <Text style={styles.text}>{title}</Text>
         </Pressable>
     )

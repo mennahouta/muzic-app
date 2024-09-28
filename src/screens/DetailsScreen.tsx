@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable } from 'react-native'
 import { DetailsScreenProps } from '../types/navigation'
-import Icon from 'react-native-vector-icons/MaterialIcons'
 import Button from '../components/Button'
+import DetailRow from '../components/DetailRow'
 
 const DetailsScreen = ({ route }: DetailsScreenProps) => {
     const { album } = route.params
@@ -31,17 +31,6 @@ const DetailsScreen = ({ route }: DetailsScreenProps) => {
         </View>
     )
 }
-
-// Reusable component for detail rows
-const DetailRow = ({ icon, label, value }: { icon: string; label: string; value: string }) => (
-    <View style={styles.detailRow}>
-        <Icon name={icon} size={20} color="#999" />
-        <View style={styles.detailTextContainer}>
-            <Text style={styles.detailLabel}>{label}</Text>
-            <Text style={styles.detailText}>{value}</Text>
-        </View>
-    </View>
-)
 
 const styles = StyleSheet.create({
     container: {
@@ -80,23 +69,6 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#f5f5f5',
         marginTop: 20,
-    },
-    detailTextContainer: {
-        marginLeft: 12,
-        marginTop: 10,
-    },
-    detailRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    detailLabel: {
-        fontSize: 16,
-        marginLeft: 4,
-    },
-    detailText: {
-        fontSize: 14,
-        color: '#666',
-        marginLeft: 4,
     },
     link: {
         marginTop: -10,
