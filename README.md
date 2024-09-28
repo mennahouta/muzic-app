@@ -15,12 +15,16 @@ A React Native application that fetches and displays the top 10 albums from the 
 3. run `yarn android`
 
 # Screenshots
-
 ### Home Screen
+<img src="https://github.com/user-attachments/assets/fd9a703b-96b2-4e11-bc0c-2ac2b21952c1" width='300px'/>
 
 ### Album Details Screen
+<img src="https://github.com/user-attachments/assets/f542767a-22c9-47a6-a77e-67587ff7d771" width='300px'/>
+<img src="https://github.com/user-attachments/assets/f4ab4c39-e308-4bdd-a601-fb4e0e084952" width='300px'/>
 
 ### Favorites Screen
+<img src="https://github.com/user-attachments/assets/8311bb4d-4cd7-418e-811b-3ba996779505" width='300px'/>
+<img src="https://github.com/user-attachments/assets/591ad526-2d04-4846-813e-1c3fb23bf484" width='300px'/>
 
 # Future Work
 
