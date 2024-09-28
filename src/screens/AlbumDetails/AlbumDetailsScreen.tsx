@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable } from 'react-native'
-import { DetailsScreenProps } from '../types/navigation'
-import Button from '../components/Button'
-import DetailRow from '../components/DetailRow'
-import FavButton from '../components/FavButton'
+import { DetailsScreenProps } from '../../types/navigation'
+import Button from '../../components/Button'
+import DetailRow from './DetailRow'
+import FavButton from '../../components/FavButton'
 
 const DetailsScreen = ({ route }: DetailsScreenProps) => {
     const { album } = route.params

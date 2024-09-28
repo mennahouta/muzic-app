@@ -4,11 +4,11 @@ import { RouteProp } from '@react-navigation/native'
 
 export type RootStackParamList = {
     Home: undefined
-    Details: { album: Album }
+    AlbumDetails: { album: Album }
 }
 
 export type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>
 
 export type DetailsScreenProps = {
-  route: RouteProp<RootStackParamList, 'Details'>;
-};
+    route: RouteProp<RootStackParamList, 'AlbumDetails'>
+}

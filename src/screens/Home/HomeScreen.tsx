@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, FlatList, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { fetchAlbums } from '../services/itunesService'
-import { Album } from '../types/itunes'
+import { fetchAlbums } from '../../services/itunesService'
+import { Album } from '../../types/itunes'
 import { useNavigation } from '@react-navigation/native'
-import { HomeScreenNavigationProp } from '../types/navigation'
+import { HomeScreenNavigationProp } from '../../types/navigation'
 
 const HomeScreen = () => {
     const [albums, setAlbums] = useState<Album[]>([])
@@ -20,7 +20,7 @@ const HomeScreen = () => {
 
     // Handler to navigate to the details screen
     const handlePress = (album: Album) => {
-        navigation.navigate('Details', { album })
+        navigation.navigate('AlbumDetails', { album })
     }
 
     const renderItem = ({ item }: { item: Album }) => (
