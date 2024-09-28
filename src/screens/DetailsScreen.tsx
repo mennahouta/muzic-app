@@ -1,13 +1,14 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Linking } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable } from 'react-native'
 import { DetailsScreenProps } from '../types/navigation'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import Button from '../components/Button'
 
 const DetailsScreen = ({ route }: DetailsScreenProps) => {
     const { album } = route.params
 
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.imageContainer}>
                 <Image source={{ uri: album.imageURI }} style={styles.albumImage} />
                 <View style={styles.overlay} />
@@ -22,12 +23,12 @@ const DetailsScreen = ({ route }: DetailsScreenProps) => {
                 <DetailRow icon="person" label="Artist Name" value={album.artist} />
                 <DetailRow icon="fiber-smart-record" label="No of songs" value={album.songsCount} />
                 <DetailRow icon="calendar-today" label="Release on" value={album.releaseDate} />
-
-                <TouchableOpacity onPress={() => Linking.openURL(album.link)}>
-                    <Text style={styles.link}>iTunes Link</Text>
-                </TouchableOpacity>
             </View>
-        </ScrollView>
+
+            <View style={styles.link}>
+                <Button title="iTunes Link" onPress={() => Linking.openURL(album.link)}></Button>
+            </View>
+        </View>
     )
 }
 
@@ -98,9 +99,8 @@ const styles = StyleSheet.create({
         marginLeft: 4,
     },
     link: {
-        fontSize: 16,
-        color: '#007bff',
-        textAlign: 'right',
+        marginTop: -10,
+        paddingHorizontal: 10,
     },
 })
 
