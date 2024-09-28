@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 8,
     },
     albumDetails: {
-        //flexShrink: 1,
         flex: 1,
     },
     albumTitle: {

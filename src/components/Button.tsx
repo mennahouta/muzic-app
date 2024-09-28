@@ -1,5 +1,9 @@
 import React from 'react'
-import { Text, StyleSheet, Pressable, ButtonProps } from 'react-native'
+import { Text, StyleSheet, Pressable, PressableProps } from 'react-native'
+
+interface ButtonProps extends PressableProps {
+    title?: string
+}
 
 export default function Button(props: ButtonProps) {
     const { onPress, title = 'Save' } = props
@@ -13,10 +17,9 @@ export default function Button(props: ButtonProps) {
 const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 12,
+        paddingVertical: 15,
         paddingHorizontal: 32,
-        borderRadius: 8,
+        borderRadius: 10,
         backgroundColor: 'black',
     },
     text: {

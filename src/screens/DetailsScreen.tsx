@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, ScrollView, Linking, Pressable } from 'r
 import { DetailsScreenProps } from '../types/navigation'
 import Button from '../components/Button'
 import DetailRow from '../components/DetailRow'
+import FavButton from '../components/FavButton'
 
 const DetailsScreen = ({ route }: DetailsScreenProps) => {
     const { album } = route.params
@@ -25,8 +26,13 @@ const DetailsScreen = ({ route }: DetailsScreenProps) => {
                 <DetailRow icon="calendar-today" label="Release on" value={album.releaseDate} />
             </View>
 
-            <View style={styles.link}>
-                <Button title="iTunes Link" onPress={() => Linking.openURL(album.link)}></Button>
+            <View style={styles.actionsContainer}>
+                <View style={styles.favButtonContainer}>
+                    <FavButton></FavButton>
+                </View>
+                <View style={styles.itunesLinkContainer}>
+                    <Button title="iTunes Link" onPress={() => Linking.openURL(album.link)}></Button>
+                </View>
             </View>
         </View>
     )
@@ -35,7 +41,7 @@ const DetailsScreen = ({ route }: DetailsScreenProps) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f7f7f7',
+        backgroundColor: '#eeeeee',
     },
     imageContainer: {
         position: 'relative',
@@ -43,7 +49,7 @@ const styles = StyleSheet.create({
     albumImage: {
         marginTop: -20,
         width: '100%',
-        height: 400,
+        height: 350,
         resizeMode: 'cover',
     },
     overlay: {
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
     },
     logoContainer: {
         position: 'absolute',
-        top: 340,
+        top: 285,
         left: 20,
         zIndex: 1,
     },
@@ -67,12 +73,24 @@ const styles = StyleSheet.create({
     },
     detailsContainer: {
         padding: 20,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#eeeeee',
         marginTop: 20,
     },
-    link: {
-        marginTop: -10,
+    actionsContainer: {
+        marginTop: 20,
         paddingHorizontal: 10,
+        flexDirection: 'row',
+        gap: 15,
+    },
+    itunesLinkContainer: {
+        width: '80%',
+    },
+    favButtonContainer: {
+        marginLeft: 10,
+        alignItems: 'center',
+        padding: 10,
+        backgroundColor: 'white',
+        borderRadius: 25,
     },
 })
 
